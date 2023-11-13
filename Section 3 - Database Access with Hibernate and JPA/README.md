@@ -374,10 +374,10 @@ public class Student {
 ### 🟥 Spring @Repository Annotation
 
 * Spring provides the `@Repository` annotation which is a "sub" annotation of `@Component`
-
+* The @Repository annotation is a marker for any class that fulfils the role or stereotype of a repository (also known as Data Access Object or DAO).
 * This will register the class its applied as a bean automatically thanks to component scanning✅
 
-* 🎃`@Repository` provides translations for any JDBC related exception🎃
+* 🎃`@Repository` provides translations for any JDBC related exception(meaning that spring will override those exceptions into exceptions that are related to Spring.)🎃
 
 * We shall apply this annotation to our `StudentDAOImpl` class✅
 
@@ -419,8 +419,11 @@ public class StudentDAOImpl implements StudentDAO {
 ```
 
 * ⚠️Without the `@Transactional` annotation, the application will fail when attempting to persist to the database⚠️
+* In simple terms, since we are modifying the database (insert update delete), then code must run in a transaction. If we are not modifying the database (find query) then no transaction is required.
+![image](https://github.com/Habeeb-MD/Spring_and_Hibernate_Course/assets/60383823/ab600ee9-d630-45a7-8e7a-0035dee35195)
 
 * I then update the `CrudDemoApplication` class
+* When using @Bean for a method such as commandLineRunner, Spring will check the arguments to the method. Spring will resolve the method arguments by injecting the appropriate Spring Bean. In this case, there is no need to use @Autowired. Spring will inject the beans automatically behind the scenes.
 
 ```java
 @SpringBootApplication
