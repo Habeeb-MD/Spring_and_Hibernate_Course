@@ -275,7 +275,7 @@ public class FunRestController {
 * We COULD use this file to instruct which port number to use. E.g. by writing:
 
 ```properties
-server-port:8089
+server.port=8090
 ```
 
 ## 🟦 Reading from Application Properties
